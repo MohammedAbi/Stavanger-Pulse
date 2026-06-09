@@ -3,6 +3,12 @@
 A modern data dashboard for Stavanger, Norway, built with React, Vite, TypeScript, and TailwindCSS.  
 It visualizes real municipal and public registry data such as population, names, parking, tide levels, sculptures, and more.
 
+## Product Showcase
+
+![Stavanger-Puls UI](https://github.com/user-attachments/assets/ec61795b-79ee-430c-8264-21d004c078ea)
+
+This image gives a glimpse into the Stavanger-Puls application’s user interface, featuring a modern, clean, and mobile-first design. The application leverages Tailwind CSS for responsiveness and intuitive layouts, providing an optimal user experience across all devices.
+
 ---
 
 ## 🚀 Live Demo
