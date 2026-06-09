@@ -42,6 +42,8 @@ It visualizes real municipal and public registry data such as population, names,
 
 ## 📁 Project Structure
 
+```
+
 src/
 ├── api/
 ├── components/
@@ -51,6 +53,8 @@ src/
 ├── utils/
 ├── main.tsx
 ├── App.tsx
+
+```
 
 ---
 
