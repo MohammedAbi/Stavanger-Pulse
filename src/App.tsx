@@ -8,6 +8,7 @@ import TidePage from "./pages/TidePage.tsx";
 import FolkeregisterPage from "./pages/FolkeregisterPage.tsx";
 import HomePage from "./pages/HomePage.tsx";
 import SculpturesPage from "./pages/SculpturesPage.tsx";
+import NotFound from "./pages/NotFound.tsx";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/tide" element={<TidePage />} />
         <Route path="/folkeregister" element={<FolkeregisterPage />} />
         <Route path="/sculptures" element={<SculpturesPage />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );

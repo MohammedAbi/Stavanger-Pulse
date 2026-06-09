@@ -22,7 +22,6 @@ export default function Navbar() {
   const navLinks = [
     { path: "/", label: "Home" },
     { path: "/population", label: "Population" },
-    { path: "/tourism", label: "Tourism" },
     { path: "/parking", label: "Parking" },
     { path: "/tide", label: "Tide" },
     { path: "/firstnames", label: "Names" },
