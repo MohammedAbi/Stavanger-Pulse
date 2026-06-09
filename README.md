@@ -1,73 +1,81 @@
-# React + TypeScript + Vite
+# Stavanger Pulse 📊🌍
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern data dashboard for Stavanger, Norway, built with React, Vite, TypeScript, and TailwindCSS.  
+It visualizes real municipal and public registry data such as population, names, parking, tide levels, sculptures, and more.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Live Demo
 
-## React Compiler
+👉 https://stavanger-pulse.netlify.app/
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Github Repo
 
-## Expanding the ESLint configuration
+👉 https://github.com/MohammedAbi/Stavanger-Pulse
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📸 Features
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Homepage info
+- Population statistics by district
+- Parking data visualization
+- Tide level information (Kartverket data)
+- First names distribution (Stavanger registry data)
+- Public sculptures map
+- Library / culture data (Solvberget)
+- Folkeregister data (civil status)
+- Responsive UI with TailwindCSS
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🧱 Tech Stack
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- React 19
+- TypeScript
+- Vite
+- React Router DOM
+- TailwindCSS
+- Leaflet (maps)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## 📁 Project Structure
+
+src/
+├── api/
+├── components/
+├── hooks/
+├── pages/
+├── services/
+├── utils/
+├── main.tsx
+├── App.tsx
+
+---
+
+## 🔌 Data Sources
+
+- Stavanger municipality datasets
+- OpenCom.no (NLOD license)
+- Kartverket
+
+---
+
+## ⚙️ Setup
+
+npm install
+npm run dev
+
+---
+
+## 🏗 Build
+
+npm run build
+
+---
+
+## 🌐 Netlify Fix
+
+public/\_redirects:
+/
