@@ -2,17 +2,12 @@ import { useParkingData } from "../hooks/useParkingData";
 import MapView from "../components/dashboard/MapView";
 import ParkingGrid from "../components/dashboard/ParkingGrid";
 import InsightsPanel from "../components/dashboard/InsightsPanel";
+import { LoadingSpinner } from "../utils/LoadingSpinner";
 
 export default function ParkingPage() {
   const { lots, loading, error } = useParkingData();
 
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-slate-950 text-white flex items-center justify-center">
-        <p className="animate-pulse">Loading Stavanger Parking data...</p>
-      </div>
-    );
-  }
+  if (loading) return <LoadingSpinner />;
 
   if (error) {
     return (

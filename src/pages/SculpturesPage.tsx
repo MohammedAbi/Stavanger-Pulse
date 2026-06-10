@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useSculptures } from "../hooks/useSculptures";
 import SculptureMap from "../api/SculptureMap";
+import { LoadingSpinner } from "../utils/LoadingSpinner";
 
 export default function SculpturesPage() {
   const { data, loading, error } = useSculptures();
@@ -8,13 +9,7 @@ export default function SculpturesPage() {
   const [search, setSearch] = useState("");
   const [limit, setLimit] = useState(12);
 
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-slate-950 text-white flex items-center justify-center">
-        Loading public art in Stavanger...
-      </div>
-    );
-  }
+  if (loading) return <LoadingSpinner />;
 
   if (error) {
     return (
@@ -59,12 +54,16 @@ export default function SculpturesPage() {
         </section>
         {/* SEARCH BAR */}
         <section>
+          <label htmlFor="search" className="block text-sm text-slate-400 mb-2">
+            Search
+          </label>
           <input
             value={search}
             onChange={(e) => {
               setSearch(e.target.value);
-              setLimit(12); // reset pagination when searching
+              setLimit(12);
             }}
+            id="search"
             placeholder="Search by name, artist or location..."
             className="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white outline-none focus:border-slate-600"
           />

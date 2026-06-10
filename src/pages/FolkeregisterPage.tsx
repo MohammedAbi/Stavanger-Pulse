@@ -1,4 +1,5 @@
 import { useFolkeregisterData } from "../hooks/useFolkeregisterData";
+import { LoadingSpinner } from "../utils/LoadingSpinner";
 
 function Mini({ label, value }: { label: string; value: number }) {
   return (
@@ -21,8 +22,7 @@ function Stat({ label, value }: { label: string; value: string }) {
 export default function FolkeregisterPage() {
   const { data, loading, error } = useFolkeregisterData();
 
-  if (loading)
-    return <div className="text-white p-6">Loading population data...</div>;
+  if (loading) return <LoadingSpinner />;
 
   if (error) return <div className="text-red-400 p-6">{error}</div>;
 

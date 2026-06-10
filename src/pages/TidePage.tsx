@@ -1,10 +1,10 @@
 import { useTideData } from "../hooks/useTideData";
+import { LoadingSpinner } from "../utils/LoadingSpinner";
 
 export default function TidePage() {
   const { points, summary, loading, error } = useTideData();
 
-  if (loading)
-    return <div className="text-white p-6">Loading tide information...</div>;
+  if (loading) return <LoadingSpinner />;
 
   if (error) return <div className="text-red-400 p-6">{error}</div>;
 

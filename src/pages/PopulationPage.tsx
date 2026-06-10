@@ -1,5 +1,6 @@
 import { usePopulationData } from "../hooks/usePopulationData";
 import type { PopulationRecord } from "../api/populationMapper";
+import { LoadingSpinner } from "../utils/LoadingSpinner";
 
 function Stat({ label, value }: { label: string; value: number | string }) {
   return (
@@ -13,8 +14,7 @@ function Stat({ label, value }: { label: string; value: number | string }) {
 export default function PopulationPage() {
   const { data, loading, error } = usePopulationData();
 
-  if (loading)
-    return <div className="text-white p-6">Loading population data...</div>;
+  if (loading) return <LoadingSpinner />;
 
   if (error) return <div className="text-red-400 p-6">Error: {error}</div>;
 

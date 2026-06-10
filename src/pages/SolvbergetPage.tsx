@@ -1,4 +1,5 @@
 import { useSolvbergetData } from "../hooks/useSolvbergetData";
+import { LoadingSpinner } from "../utils/LoadingSpinner";
 
 function Mini({ label, value }: { label: string; value: number }) {
   return (
@@ -21,13 +22,7 @@ function Stat({ label, value }: { label: string; value: number }) {
 export default function SolvbergetPage() {
   const { stats, peak, loading, error } = useSolvbergetData();
 
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-slate-950 text-white flex items-center justify-center">
-        <p className="animate-pulse">Loading Sølvberget insights...</p>
-      </div>
-    );
-  }
+  if (loading) return <LoadingSpinner />;
 
   if (error) {
     return (

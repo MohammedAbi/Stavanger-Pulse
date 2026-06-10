@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import { useFirstNames } from "../hooks/useFirstNames";
+import { LoadingSpinner } from "../utils/LoadingSpinner";
 
 function Mini({ label, value }: { label: string; value: number }) {
   return (
@@ -47,12 +48,7 @@ export default function FirstNamesPage() {
     };
   }, [data, search]);
 
-  if (loading)
-    return (
-      <div className="min-h-screen bg-slate-950 text-white flex items-center justify-center">
-        <p className="animate-pulse">Loading first names...</p>
-      </div>
-    );
+  if (loading) return <LoadingSpinner />;
 
   if (error)
     return (
@@ -133,8 +129,12 @@ export default function FirstNamesPage() {
         <section className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
           <h2 className="font-semibold mb-3">🔎 Search names</h2>
 
+          <label htmlFor="firstNameSearch" className="sr-only">
+            Search by first name
+          </label>
           <input
             type="text"
+            id="firstNameSearch"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search first name..."
